@@ -1,29 +1,16 @@
-import pytest
-from selenium import webdriver
+# This is a sample Python script.
+
+# Press Shift+F10 to execute it or replace it with your code.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-@pytest.fixture()
-def browser():
-    # Инициализация драйвера
-    driver = webdriver.Chrome()
-    driver.maximize_window()
-    # Открытие главной страницы Google
-    driver.get("https://www.google.com/")
-    yield driver
-    # Закрытие браузера после выполнения всех тестов
-    driver.quit()
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-def test_google_title(browser):
-    # Проверка заголовка страницы
-    assert browser.title == "Google"
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    print_hi('PyCharm')
 
-
-def test_google_search_bar(browser):
-    # Проверка наличия строки поиска на странице
-    assert browser.find_element_by_name("q").is_displayed()
-
-
-def test_google_search_button(browser):
-    # Проверка наличия кнопки поиска на странице
-    assert browser.find_element_by_name("btnK").is_displayed()
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
